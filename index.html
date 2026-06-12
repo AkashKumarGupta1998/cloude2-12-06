@@ -824,7 +824,7 @@ footer a:hover{opacity:1}
 // ─────────────────────────────────────────────
 // CONFIG — paste your Apps Script Web App URL below after deploying
 // ─────────────────────────────────────────────
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbyZVikMS9SdfF9Sc-G77XhfsR6hKjaugu7GoFc49XwVgZy4--7FIVl_RU1cTQAtNZh_/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbwja8kezYJCuB50RWuIM1vWSxfAVqTzKwvPHeZP3FgqOwQggXW3ZNSUr_ZjkOK9y_nQ/exec';
 
 // ─────────────────────────────────────────────
 // State
@@ -901,7 +901,7 @@ function renderPosts(){
 // Load posts from Google Sheets
 // ─────────────────────────────────────────────
 async function loadPosts(){
-  if(GAS_URL === 'https://script.google.com/macros/s/AKfycbyZVikMS9SdfF9Sc-G77XhfsR6hKjaugu7GoFc49XwVgZy4--7FIVl_RU1cTQAtNZh_/exec'){
+  if(GAS_URL === 'https://script.google.com/macros/s/AKfycbwja8kezYJCuB50RWuIM1vWSxfAVqTzKwvPHeZP3FgqOwQggXW3ZNSUr_ZjkOK9y_nQ/exec'){
     document.getElementById('emptyBlog').style.display='block';
     document.getElementById('emptyBlog').innerHTML='<i class="fas fa-plug" style="font-size:2rem;margin-bottom:12px;display:block"></i><p>Connect your Google Sheet to display posts.<br><small style="color:var(--text3)">Set GAS_URL in the script, then reload.</small></p>';
     return;
@@ -951,7 +951,7 @@ async function openPost(id){
   document.body.style.overflow='hidden';
 
   try{
-    if(GAS_URL !== 'https://script.google.com/macros/s/AKfycbyZVikMS9SdfF9Sc-G77XhfsR6hKjaugu7GoFc49XwVgZy4--7FIVl_RU1cTQAtNZh_/exec'){
+    if(GAS_URL !== 'https://script.google.com/macros/s/AKfycbwja8kezYJCuB50RWuIM1vWSxfAVqTzKwvPHeZP3FgqOwQggXW3ZNSUr_ZjkOK9y_nQ/exec'){
       const cr = await gasGet({action:'getComments', postId:id});
       if(cr.ok) renderComments(cr.comments);
     } else renderComments([]);
@@ -981,7 +981,7 @@ async function postComment(){
   const name = document.getElementById('commenterName').value.trim();
   const text = document.getElementById('commenterText').value.trim();
   if(!name||!text){ showToast('Please enter your name and comment.'); return; }
-  if(GAS_URL === 'https://script.google.com/macros/s/AKfycbyZVikMS9SdfF9Sc-G77XhfsR6hKjaugu7GoFc49XwVgZy4--7FIVl_RU1cTQAtNZh_/exec'){ showToast('Configure GAS_URL first.'); return; }
+  if(GAS_URL === 'https://script.google.com/macros/s/AKfycbwja8kezYJCuB50RWuIM1vWSxfAVqTzKwvPHeZP3FgqOwQggXW3ZNSUr_ZjkOK9y_nQ/exec'){ showToast('Configure GAS_URL first.'); return; }
   const btn = document.querySelector('.comment-input-row button');
   btn.disabled = true;
   try{
@@ -1004,7 +1004,7 @@ async function postComment(){
 // Reactions
 // ─────────────────────────────────────────────
 async function reactPost(type){
-  if(GAS_URL === 'https://script.google.com/macros/s/AKfycbyZVikMS9SdfF9Sc-G77XhfsR6hKjaugu7GoFc49XwVgZy4--7FIVl_RU1cTQAtNZh_/exec'){ showToast('Configure GAS_URL first.'); return; }
+  if(GAS_URL === 'https://script.google.com/macros/s/AKfycbwja8kezYJCuB50RWuIM1vWSxfAVqTzKwvPHeZP3FgqOwQggXW3ZNSUr_ZjkOK9y_nQ/exec'){ showToast('Configure GAS_URL first.'); return; }
   const p = posts.find(x=>x.postId===currentPostId); if(!p) return;
   const prev = userReactions[currentPostId];
   if(prev===type) return;
@@ -1021,7 +1021,7 @@ async function reactPost(type){
 }
 
 async function quickReact(id, type){
-  if(GAS_URL === 'https://script.google.com/macros/s/AKfycbyZVikMS9SdfF9Sc-G77XhfsR6hKjaugu7GoFc49XwVgZy4--7FIVl_RU1cTQAtNZh_/exec'){ showToast('Configure GAS_URL first.'); return; }
+  if(GAS_URL === 'https://script.google.com/macros/s/AKfycbwja8kezYJCuB50RWuIM1vWSxfAVqTzKwvPHeZP3FgqOwQggXW3ZNSUr_ZjkOK9y_nQ/exec'){ showToast('Configure GAS_URL first.'); return; }
   const p = posts.find(x=>x.postId===id); if(!p) return;
   if(userReactions[id]===type) return;
   userReactions[id] = type;
@@ -1070,7 +1070,7 @@ async function sendContact(){
   const btn = document.getElementById('sendBtn');
   btn.disabled=true; document.getElementById('btnTxt').textContent='Sending…';
   try{
-    if(GAS_URL !== 'https://script.google.com/macros/s/AKfycbyZVikMS9SdfF9Sc-G77XhfsR6hKjaugu7GoFc49XwVgZy4--7FIVl_RU1cTQAtNZh_/exec'){
+    if(GAS_URL !== 'https://script.google.com/macros/s/AKfycbwja8kezYJCuB50RWuIM1vWSxfAVqTzKwvPHeZP3FgqOwQggXW3ZNSUr_ZjkOK9y_nQ/exec'){
       const res = await gasPost({action:'message', name:name, email:email, subject:subject, message:msg});
       if(!res.ok) throw new Error('Server error');
     } else {
