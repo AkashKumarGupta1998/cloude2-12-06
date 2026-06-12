@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Kumar Gupta | Operations Leader & Control Tower Expert</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;--bg2:#ffffff;--bg3:#edeae3;
+  --text:#1a1a18;--text2:#555550;--text3:#888882;
+  --accent:#c8552a;--accent2:#2a6cc8;--accent3:#1a8c5e;
+  --border:#d4d0c8;--border2:#bab6ae;
+  --card:#ffffff;
+  --shadow:0 2px 20px rgba(0,0,0,0.08);
+  --shadow2:0 8px 40px rgba(0,0,0,0.14);
+  --r:10px;--r2:16px;
+  --trans:all 0.25s ease;
+}
+[data-theme="dark"]{
+  --bg:#0f0f0d;--bg2:#1a1a17;--bg3:#242420;
+  --text:#f0ede6;--text2:#a8a49c;--text3:#666660;
+  --accent:#e8714a;--accent2:#5a9ee8;--accent3:#3abf84;
+  --border:#2e2e28;--border2:#3a3a34;
+  --card:#1f1f1c;
+  --shadow:0 2px 20px rgba(0,0,0,0.4);
+  --shadow2:0 8px 40px rgba(0,0,0,0.6);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;transition:background 0.3s,color 0.3s;overflow-x:hidden}
+
+/* Loading */
+#loading{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity 0.5s}
+#loading.gone{opacity:0;pointer-events:none}
+.load-logo{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;letter-spacing:-1px}
+.load-logo span{color:var(--accent)}
+.load-bar{width:200px;height:2px;background:var(--border);border-radius:2px;overflow:hidden}
+.load-fill{height:100%;background:var(--accent);border-radius:2px;animation:loadanim 1.4s ease forwards}
+@keyframes loadanim{0%{width:0}100%{width:100%}}
+
+/* Header */
+header{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:1px solid var(--border);transition:var(--trans)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo-mark{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;letter-spacing:-0.5px;text-decoration:none;color:var(--text)}
+.logo-mark span{color:var(--accent)}
+nav.desk{display:flex;gap:4px}
+nav.desk a{text-decoration:none;color:var(--text2);font-size:0.88rem;font-weight:500;padding:6px 12px;border-radius:6px;transition:var(--trans)}
+nav.desk a:hover,nav.desk a.active{color:var(--text);background:var(--bg3)}
+.nav-actions{display:flex;gap:8px;align-items:center}
+.icon-btn{width:38px;height:38px;border:1px solid var(--border);border-radius:8px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:0.9rem;transition:var(--trans)}
+.icon-btn:hover{background:var(--bg3);color:var(--text)}
+.hamburger{display:none}
+
+/* Mobile nav */
+.mob-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--bg2);z-index:99;padding:24px;flex-direction:column;gap:4px}
+.mob-nav.open{display:flex}
+.mob-nav a{text-decoration:none;color:var(--text);font-size:1.1rem;font-weight:500;padding:14px 16px;border-radius:8px;transition:var(--trans)}
+.mob-nav a:hover{background:var(--bg3)}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:90px 0}
+.sec-label{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sec-title{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;line-height:1.15;color:var(--text);margin-bottom:20px}
+.sec-sub{color:var(--text2);font-size:1.05rem;max-width:560px}
+
+/* Hero */
+#hero{min-height:calc(100vh - 64px);display:flex;align-items:center;background:var(--bg)}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:500;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);padding:5px 14px;border-radius:20px;margin-bottom:24px}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent3);flex-shrink:0}
+h1.hero-name{font-family:'Syne',sans-serif;font-size:3.8rem;font-weight:800;line-height:1.05;letter-spacing:-2px;color:var(--text);margin-bottom:18px}
+h1.hero-name em{color:var(--accent);font-style:normal}
+.hero-desc{font-size:1.1rem;color:var(--text2);margin-bottom:36px;max-width:480px;line-height:1.75}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:500;font-size:0.95rem;text-decoration:none;cursor:pointer;border:none;transition:var(--trans)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border2)}
+.btn-outline:hover{border-color:var(--text);background:var(--bg3)}
+.hero-stats{display:flex;gap:32px}
+.hstat h3{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--text)}
+.hstat p{font-size:0.85rem;color:var(--text3);font-weight:500}
+.hero-visual{position:relative}
+.profile-frame{width:100%;aspect-ratio:0.85;border-radius:20px;overflow:hidden;background:var(--bg3);position:relative}
+.profile-frame img{width:100%;height:100%;object-fit:cover;object-position:top}
+.hero-socials{display:flex;flex-direction:column;gap:10px;position:absolute;right:-16px;top:50%;transform:translateY(-50%)}
+.hero-socials a{width:40px;height:40px;border-radius:8px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text2);text-decoration:none;font-size:0.9rem;transition:var(--trans);box-shadow:var(--shadow)}
+.hero-socials a:hover{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--card))}
+.float-badge{position:absolute;bottom:24px;left:-20px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 18px;box-shadow:var(--shadow2);display:flex;align-items:center;gap:12px}
+.float-badge .fi{width:40px;height:40px;border-radius:8px;background:color-mix(in srgb,var(--accent3) 15%,transparent);display:flex;align-items:center;justify-content:center;color:var(--accent3);font-size:1.2rem}
+.float-badge strong{font-size:0.9rem;font-weight:600;color:var(--text);display:block}
+.float-badge small{font-size:0.78rem;color:var(--text3)}
+
+/* Metrics row */
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;margin-bottom:80px}
+.metric-box{background:var(--bg2);padding:32px 24px;text-align:center}
+.metric-box .num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);margin-bottom:6px}
+.metric-box .label{font-size:0.82rem;color:var(--text3);font-weight:500;letter-spacing:0.5px}
+
+/* Cards */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px;transition:var(--trans)}
+.card:hover{box-shadow:var(--shadow2);transform:translateY(-2px)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img-wrap{position:relative;border-radius:var(--r2);overflow:hidden}
+.about-img-wrap img{width:100%;border-radius:var(--r2);display:block}
+.about-text p{color:var(--text2);margin-bottom:18px;line-height:1.8}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.tag{font-size:0.8rem;font-weight:500;padding:5px 13px;border-radius:20px;background:var(--bg3);color:var(--text2);border:1px solid var(--border)}
+
+/* Experience */
+#experience{background:var(--bg2)}
+.company-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);padding:28px;margin-bottom:32px}
+.company-hd{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.co-icon{width:52px;height:52px;border-radius:12px;background:color-mix(in srgb,var(--accent2) 12%,transparent);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--accent2)}
+.co-name{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:var(--text)}
+.co-meta{font-size:0.82rem;color:var(--text3)}
+.timeline{position:relative;padding-left:28px;border-left:2px solid var(--border)}
+.tl-item{position:relative;padding-bottom:32px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-35px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg2)}
+.tl-date{font-size:0.78rem;font-weight:600;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.tl-role{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.tl-co{font-size:0.88rem;color:var(--text2);margin-bottom:10px}
+.tl-desc{font-size:0.88rem;color:var(--text2);line-height:1.7}
+.impact-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-size:0.78rem;padding:4px 12px;border-radius:20px;font-weight:500}
+.chip-green{background:color-mix(in srgb,var(--accent3) 12%,transparent);color:var(--accent3);border:1px solid color-mix(in srgb,var(--accent3) 25%,transparent)}
+.chip-blue{background:color-mix(in srgb,var(--accent2) 12%,transparent);color:var(--accent2);border:1px solid color-mix(in srgb,var(--accent2) 25%,transparent)}
+.chip-orange{background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent)}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:24px}
+.skill-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:16px}
+.skill-card h4{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.sbar-list{display:flex;flex-direction:column;gap:10px}
+.sbar-item span{font-size:0.82rem;color:var(--text2);display:flex;justify-content:space-between;margin-bottom:5px}
+.sbar-track{height:4px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.sbar-fill{height:100%;border-radius:4px;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+
+/* Education */
+#education{background:var(--bg2)}
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.edu-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);padding:24px}
+.edu-card .badge{font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:6px;display:inline-block;margin-bottom:16px}
+.edu-card h4{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.edu-card .inst{font-size:0.85rem;color:var(--text2);margin-bottom:4px}
+.edu-card .year{font-size:0.8rem;color:var(--text3)}
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+.cert-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:18px;display:flex;gap:14px;align-items:flex-start}
+.cert-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cert-card h5{font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.cert-card p{font-size:0.8rem;color:var(--text3)}
+
+/* Resume */
+.resume-box{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.dl-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:36px;text-align:center}
+.dl-icon{font-size:3rem;color:var(--accent);margin-bottom:20px}
+.dl-card h3{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:10px}
+.dl-card p{color:var(--text2);font-size:0.9rem;margin-bottom:24px}
+.summary-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:28px}
+.summary-card h4{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:18px}
+.summary-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.summary-card li{display:flex;gap:12px;align-items:flex-start;font-size:0.9rem;color:var(--text2)}
+.summary-card li::before{content:'→';color:var(--accent);flex-shrink:0;font-weight:700}
+
+/* Blog */
+#blog{background:var(--bg2)}
+.blog-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+.btn-small{padding:8px 18px;font-size:0.85rem}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.post-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;cursor:pointer;transition:var(--trans)}
+.post-card:hover{box-shadow:var(--shadow2);transform:translateY(-3px)}
+.post-thumb{width:100%;height:180px;object-fit:cover;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:3rem}
+.post-thumb img{width:100%;height:100%;object-fit:cover}
+.post-body{padding:20px}
+.post-cat{font-size:0.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.post-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.4}
+.post-excerpt{font-size:0.83rem;color:var(--text2);line-height:1.6;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.post-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border)}
+.post-date{font-size:0.78rem;color:var(--text3)}
+.post-reactions{display:flex;gap:10px}
+.react-btn{display:flex;align-items:center;gap:5px;font-size:0.78rem;color:var(--text3);cursor:pointer;border:none;background:transparent;padding:4px 8px;border-radius:6px;transition:var(--trans)}
+.react-btn:hover{background:var(--bg3);color:var(--text)}
+.react-btn.liked{color:#e74c3c}
+.react-btn.disliked{color:var(--accent2)}
+
+/* Blog Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:200;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg2);border-radius:var(--r2);width:100%;max-width:760px;margin:auto;overflow:hidden;animation:slideUp 0.3s ease}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-hd{padding:24px 28px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.modal-hd h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);line-height:1.3}
+.close-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text2);flex-shrink:0;font-size:1rem;transition:var(--trans)}
+.close-btn:hover{background:var(--bg3)}
+.modal-body{padding:28px}
+.modal-meta{display:flex;gap:16px;align-items:center;margin-bottom:20px;font-size:0.83rem;color:var(--text3)}
+.modal-content p{color:var(--text2);line-height:1.9;font-size:0.95rem;margin-bottom:16px}
+.modal-reactions{display:flex;gap:12px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:20px 0}
+.react-big{display:flex;align-items:center;gap:8px;padding:10px 20px;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;font-size:0.9rem;font-weight:500;background:transparent;color:var(--text2);transition:var(--trans)}
+.react-big:hover{border-color:var(--border2);background:var(--bg3)}
+.react-big.liked{border-color:#e74c3c;color:#e74c3c;background:rgba(231,76,60,0.06)}
+.react-big.disliked{border-color:var(--accent2);color:var(--accent2);background:color-mix(in srgb,var(--accent2) 6%,transparent)}
+.comments-section h4{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:16px}
+.comment-input-row{display:flex;gap:10px;margin-bottom:20px}
+.comment-input-row input,.comment-input-row button{font-family:inherit}
+.comment-input-row input{flex:1;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.88rem;background:var(--bg);color:var(--text);outline:none;transition:var(--trans)}
+.comment-input-row input:focus{border-color:var(--accent)}
+.comment-list{display:flex;flex-direction:column;gap:12px;max-height:300px;overflow-y:auto}
+.comment-item{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:14px;display:flex;gap:12px}
+.comment-avatar{width:36px;height:36px;border-radius:50%;background:color-mix(in srgb,var(--accent2) 15%,transparent);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:var(--accent2);flex-shrink:0}
+.comment-text strong{font-size:0.82rem;font-weight:600;color:var(--text);display:block;margin-bottom:3px}
+.comment-text p{font-size:0.85rem;color:var(--text2);line-height:1.6}
+.comment-date{font-size:0.72rem;color:var(--text3);margin-top:3px}
+.empty-blog{text-align:center;padding:60px 20px;color:var(--text3)}
+.empty-blog i{font-size:3rem;margin-bottom:16px;display:block}
+
+/* Admin Panel */
+#adminModal .modal{max-width:680px}
+.form-grp{margin-bottom:18px}
+.form-grp label{display:block;font-size:0.85rem;font-weight:500;color:var(--text2);margin-bottom:6px}
+.form-grp input,.form-grp textarea,.form-grp select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;background:var(--bg);color:var(--text);font-family:inherit;outline:none;transition:var(--trans)}
+.form-grp input:focus,.form-grp textarea:focus,.form-grp select:focus{border-color:var(--accent)}
+.form-grp textarea{resize:vertical;min-height:120px}
+.pass-check{background:var(--bg3);border-radius:var(--r2);padding:60px 28px;text-align:center}
+.pass-check h3{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:8px;color:var(--text)}
+.pass-check p{color:var(--text3);font-size:0.9rem;margin-bottom:24px}
+.pass-row{display:flex;gap:10px;max-width:360px;margin:0 auto}
+.pass-row input{flex:1;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.9rem;background:var(--bg);color:var(--text);font-family:inherit;outline:none}
+.pass-row input:focus{border-color:var(--accent)}
+.admin-note{font-size:0.78rem;color:var(--text3);text-align:center;margin-top:12px}
+
+/* Contact */
+#contact{background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:start}
+.contact-info h3{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:20px}
+.contact-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px}
+.contact-item .ci{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-item .ct{font-size:0.85rem;color:var(--text3);margin-bottom:3px}
+.contact-item .cv{font-size:0.92rem;color:var(--text);font-weight:500}
+.social-row{display:flex;gap:10px;margin-top:28px}
+.soc{width:42px;height:42px;border-radius:10px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text2);text-decoration:none;font-size:0.95rem;transition:var(--trans)}
+.soc:hover{border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.contact-form{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);padding:32px}
+.contact-form .form-grp input,.contact-form .form-grp textarea{background:var(--bg2)}
+.form-status{font-size:0.88rem;padding:12px 16px;border-radius:8px;margin-bottom:16px;display:none}
+.form-status.success{background:color-mix(in srgb,var(--accent3) 10%,transparent);color:var(--accent3);border:1px solid color-mix(in srgb,var(--accent3) 25%,transparent)}
+.form-status.error{background:color-mix(in srgb,#e74c3c 10%,transparent);color:#e74c3c;border:1px solid color-mix(in srgb,#e74c3c 25%,transparent)}
+
+/* Footer */
+footer{background:var(--text);color:color-mix(in srgb,var(--bg) 70%,transparent);padding:48px 0 28px}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-brand .fl{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:10px}
+.footer-brand .fl span{color:var(--accent)}
+.footer-brand p{font-size:0.85rem;opacity:0.6;line-height:1.7}
+footer h5{font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0.4;margin-bottom:16px}
+footer a{display:block;text-decoration:none;color:inherit;font-size:0.88rem;opacity:0.7;margin-bottom:10px;transition:var(--trans)}
+footer a:hover{opacity:1}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;opacity:0.45}
+
+/* Responsive */
+@media(max-width:968px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-visual{display:none}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .metrics-row{grid-template-columns:repeat(2,1fr)}
+  .posts-grid{grid-template-columns:1fr 1fr}
+  .resume-box{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  h1.hero-name{font-size:2.6rem}
+  .sec-title{font-size:1.8rem}
+  nav.desk{display:none}
+  .hamburger{display:flex}
+  .skills-grid,.edu-grid,.cert-grid,.posts-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .hero-stats{gap:20px}
+  .metrics-row{grid-template-columns:1fr 1fr}
+}
+
+/* Scroll animate */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.vis{opacity:1;transform:none}
+
+/* Notification */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--text);color:var(--bg);padding:12px 20px;border-radius:10px;font-size:0.88rem;z-index:999;transform:translateY(80px);opacity:0;transition:var(--trans);max-width:320px}
+.toast.show{transform:translateY(0);opacity:1}
+</style>
+</head>
+<body>
+
+<!-- Loading -->
+<div id="loading">
+  <div class="load-logo">AK<span>G</span></div>
+  <div class="load-bar"><div class="load-fill"></div></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Header -->
+<header>
+  <div class="nav-wrap">
+    <a href="#hero" class="logo-mark">Akash<span>.</span></a>
+    <nav class="desk" id="deskNav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#resume">Resume</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme"><i class="fas fa-moon"></i></button>
+      <button class="icon-btn hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+<nav class="mob-nav" id="mobNav">
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#experience" onclick="closeMob()">Experience</a>
+  <a href="#skills" onclick="closeMob()">Skills</a>
+  <a href="#education" onclick="closeMob()">Education</a>
+  <a href="#resume" onclick="closeMob()">Resume</a>
+  <a href="#blog" onclick="closeMob()">Blog</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</nav>
+
+<main>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-tag">Currently at Apollo Pharmalogistics · Bangalore</div>
+        <h1 class="hero-name">Akash<br>Kumar<br><em>Gupta</em></h1>
+        <p class="hero-desc">Operations leader specialising in Control Tower, Quick Commerce & Last-Mile Logistics. Turning real-time data into operational excellence.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+          <a href="https://github.com/user-attachments/files/22951649/resume.pdf" download class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat"><h3>5+</h3><p>Years Teaching</p></div>
+          <div class="hstat"><h3>2+</h3><p>Yrs Operations</p></div>
+          <div class="hstat"><h3>4→</h3><p>Breach % from 17%</p></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-frame">
+          <img src="https://github.com/user-attachments/assets/fcccb389-37db-4b5c-b4cd-b488afa93c4e" alt="Akash Kumar Gupta" onerror="this.style.display='none'">
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/akash-kumar1998" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@Akash4All" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.quora.com/profile/Akash-Kumar-5940" target="_blank" title="Quora"><i class="fab fa-quora"></i></a>
+          <a href="https://www.credly.com/users/akash-kumar-gupta.16afd047" target="_blank" title="Credly"><i class="fas fa-award"></i></a>
+        </div>
+        <div class="float-badge">
+          <div class="fi"><i class="fas fa-chart-line"></i></div>
+          <div><strong>Operations Supervisor</strong><small>Apollo Pharmalogistics · 2026</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Metrics -->
+<div class="container">
+  <div class="metrics-row reveal">
+    <div class="metric-box"><div class="num">99%</div><div class="label">Serviceability Achieved</div></div>
+    <div class="metric-box"><div class="num">~4%</div><div class="label">Breach % (was 17%)</div></div>
+    <div class="metric-box"><div class="num">~1%</div><div class="label">Cancellation (was 6%)</div></div>
+    <div class="metric-box"><div class="num">+50%</div><div class="label">Chat Handling Capacity</div></div>
+  </div>
+</div>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <img src="https://github.com/user-attachments/assets/c242eb3c-e8cd-4b2d-8ea7-5981e7d4d9cd" alt="Akash Kumar Gupta" style="width:100%;border-radius:var(--r2);display:block" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="reveal">
+        <div class="sec-label">About Me</div>
+        <h2 class="sec-title" style="margin-bottom:20px">From Chemistry Labs to Control Towers</h2>
+        <div class="about-text">
+          <p>I'm an operations professional with a unique trajectory — from teaching Chemistry & Mathematics for 5+ years to leading control tower operations for India's top quick-commerce platforms.</p>
+          <p>Currently serving as <strong>Operations Supervisor at Apollo Pharmalogistics</strong>, I manage end-to-end Hyperlocal, Middle Mile, and Last Mile operations. My previous role at Shadowfax Technologies saw me driving significant SLA improvements across Myntra Now, Nykaa 2-Hour Express, Healthkart, and Qmin (Taj Group).</p>
+          <p>I combine analytical rigour with on-ground operational instinct — translating real-time data into decisions that move the needle.</p>
+        </div>
+        <div class="tag-list">
+          <span class="tag">Control Tower Ops</span>
+          <span class="tag">Quick Commerce</span>
+          <span class="tag">SLA Governance</span>
+          <span class="tag">Hyperlocal Logistics</span>
+          <span class="tag">Six Sigma SSYB</span>
+          <span class="tag">Data-Driven Decisions</span>
+          <span class="tag">Process Optimisation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <div class="container">
+    <div class="sec-label">Career Journey</div>
+    <h2 class="sec-title">Professional Experience</h2>
+
+    <!-- Apollo -->
+    <div class="company-card reveal">
+      <div class="company-hd">
+        <div class="co-icon" style="background:color-mix(in srgb,var(--accent3) 12%,transparent);color:var(--accent3)"><i class="fas fa-pills"></i></div>
+        <div>
+          <div class="co-name">Apollo Pharmalogistics Pvt. Ltd.</div>
+          <div class="co-meta">May 2026 – Present · Bangalore · Healthcare Logistics</div>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">May 2026 – Present</div>
+          <div class="tl-role">Operations Supervisor</div>
+          <div class="tl-co">Apollo Pharmalogistics · Hyperlocal & Last Mile</div>
+          <div class="tl-desc">Managing end-to-end Hyperlocal, Middle Mile, and Last Mile operations for timely delivery of medical orders. Monitoring dispatch efficiency, rider productivity, SLA adherence, and delivery success rate. Driving process improvements and handling real-time escalations.</div>
+          <div class="impact-chips">
+            <span class="chip chip-green">Hyperlocal Ops</span>
+            <span class="chip chip-green">Last Mile Management</span>
+            <span class="chip chip-green">Healthcare Logistics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shadowfax -->
+    <div class="company-card reveal">
+      <div class="company-hd">
+        <div class="co-icon"><i class="fas fa-shipping-fast"></i></div>
+        <div>
+          <div class="co-name">Shadowfax Technologies Ltd.</div>
+          <div class="co-meta">April 2024 – April 2026 · Bangalore · Quick Commerce & E-Commerce Logistics</div>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Oct 2025 – Apr 2026</div>
+          <div class="tl-role">Associate Lead – Control Tower Operations</div>
+          <div class="tl-co">Quick Commerce, Hyperlocal Deliveries & Client Ops</div>
+          <div class="tl-desc">Led team operations for quick-commerce and hyperlocal delivery clients. Managed cross-client performance monitoring, SLA governance, and stakeholder reporting.</div>
+          <div class="impact-chips"><span class="chip chip-blue">Team Leadership</span><span class="chip chip-blue">Hybrid</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Sep 2025 – Oct 2025</div>
+          <div class="tl-role">Control Tower Operations – Myntra Now</div>
+          <div class="tl-co">End-to-end order movement monitoring</div>
+          <div class="tl-desc">Monitored inventory accuracy, coordinated with warehouse & last-mile teams. Planned and tracked daily metrics: Breaches, RTOs, Cancellations, Serviceability.</div>
+          <div class="impact-chips">
+            <span class="chip chip-green">Breach: 17% → ~4%</span>
+            <span class="chip chip-green">RTO: 11% → ~4.5%</span>
+            <span class="chip chip-green">Cancellation: 6% → ~1%</span>
+            <span class="chip chip-green">Serviceability: 95% → 99%</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Apr 2025 – Sep 2025</div>
+          <div class="tl-role">Control Tower – Nykaa 2-Hour Express (City POC)</div>
+          <div class="tl-co">Q-Commerce · City-level Control Tower POC</div>
+          <div class="tl-desc">Acted as city-level POC for 2-hour deliveries. Monitored order flow, rider availability, store readiness. Proactive escalations to reduce breaches and failed deliveries.</div>
+          <div class="impact-chips">
+            <span class="chip chip-orange">Breach: 23% → 11%</span>
+            <span class="chip chip-orange">RTO: 13% → 7%</span>
+            <span class="chip chip-orange">Cancellation: 7% → 3%</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Jun 2025 – Sep 2025</div>
+          <div class="tl-role">Control Tower – Healthkart Hyperlocal</div>
+          <div class="tl-co">2-hour hyperlocal delivery support</div>
+          <div class="tl-desc">Ensured timely dispatch, resolved SLA bottlenecks, monitored riders against fake deliveries and false attempts. Attempt % consistently above 92%.</div>
+          <div class="impact-chips"><span class="chip chip-green">Attempt %: >92%</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Nov 2024 – Apr 2025</div>
+          <div class="tl-role">RCC Chat Support – Rider Care Centre</div>
+          <div class="tl-co">Rider support, onboarding & KYC verification</div>
+          <div class="tl-desc">Handled rider queries (payouts, incentives, IDs, subscriptions). Stepped in for Live chat during peak hours. Improved daily chat handling from ~220 to ~350 chats/day (+50%). Supported Uber Bike Taxi rider onboarding and KYC.</div>
+          <div class="impact-chips"><span class="chip chip-blue">+50% Chat Capacity</span><span class="chip chip-blue">Top Performer</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Apr 2024 – Sep 2024</div>
+          <div class="tl-role">COB Team – Central Onboarding & Verification</div>
+          <div class="tl-co">Delivery partner onboarding & document verification</div>
+          <div class="tl-desc">Onboarding and verification for delivery partners during Shadowfax-Uber Bike Taxi collaboration. Increased lead-to-conversion rate by ~13%, raised daily activation targets from 30 to 40.</div>
+          <div class="impact-chips"><span class="chip chip-orange">+13% Conversion Rate</span><span class="chip chip-orange">30→40 Daily Activations</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-label">Capabilities</div>
+    <h2 class="sec-title">Skills & Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon" style="background:color-mix(in srgb,var(--accent2) 12%,transparent);color:var(--accent2)"><i class="fas fa-tower-broadcast"></i></div>
+        <h4>Operations & Control Tower</h4>
+        <div class="sbar-list">
+          <div class="sbar-item"><span><span>Control Tower Ops</span><span>95%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="95" style="background:var(--accent2)"></div></div></div>
+          <div class="sbar-item"><span><span>SLA Management</span><span>92%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="92" style="background:var(--accent2)"></div></div></div>
+          <div class="sbar-item"><span><span>Hyperlocal Logistics</span><span>90%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="90" style="background:var(--accent2)"></div></div></div>
+          <div class="sbar-item"><span><span>Last Mile Operations</span><span>88%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="88" style="background:var(--accent2)"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon" style="background:color-mix(in srgb,var(--accent3) 12%,transparent);color:var(--accent3)"><i class="fas fa-chart-bar"></i></div>
+        <h4>Analytics & Reporting</h4>
+        <div class="sbar-list">
+          <div class="sbar-item"><span><span>KPI Monitoring</span><span>93%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="93" style="background:var(--accent3)"></div></div></div>
+          <div class="sbar-item"><span><span>MIS Reporting</span><span>88%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="88" style="background:var(--accent3)"></div></div></div>
+          <div class="sbar-item"><span><span>Root Cause Analysis</span><span>85%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="85" style="background:var(--accent3)"></div></div></div>
+          <div class="sbar-item"><span><span>Data-Driven Decisions</span><span>90%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="90" style="background:var(--accent3)"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon" style="background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent)"><i class="fas fa-users"></i></div>
+        <h4>Leadership & Coordination</h4>
+        <div class="sbar-list">
+          <div class="sbar-item"><span><span>Stakeholder Management</span><span>91%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="91" style="background:var(--accent)"></div></div></div>
+          <div class="sbar-item"><span><span>Escalation Management</span><span>94%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="94" style="background:var(--accent)"></div></div></div>
+          <div class="sbar-item"><span><span>Process Improvement</span><span>88%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="88" style="background:var(--accent)"></div></div></div>
+          <div class="sbar-item"><span><span>Team Collaboration</span><span>90%</span></span><div class="sbar-track"><div class="sbar-fill" data-w="90" style="background:var(--accent)"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+  <div class="container">
+    <div class="sec-label">Academic Background</div>
+    <h2 class="sec-title">Education & Certifications</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <span class="badge" style="background:color-mix(in srgb,var(--accent2) 10%,transparent);color:var(--accent2)">Post-Graduate</span>
+        <h4>M.Sc. Chemistry</h4>
+        <div class="inst">T.P.S. College</div>
+        <div class="year">Aggregate: 70%</div>
+      </div>
+      <div class="edu-card reveal">
+        <span class="badge" style="background:color-mix(in srgb,var(--accent3) 10%,transparent);color:var(--accent3)">Graduate</span>
+        <h4>B.Sc. Chemistry</h4>
+        <div class="inst">R.K.D. College</div>
+        <div class="year">Aggregate: 60%</div>
+      </div>
+      <div class="edu-card reveal">
+        <span class="badge" style="background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent)">Higher Secondary</span>
+        <h4>HSC</h4>
+        <div class="inst">A.N. College, Patna</div>
+        <div class="year">Aggregate: 66%</div>
+      </div>
+    </div>
+    <div class="cert-grid" style="margin-top:40px">
+      <div class="cert-card reveal">
+        <div class="cert-icon" style="background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent)"><i class="fas fa-certificate"></i></div>
+        <div><h5>Six Sigma Yellow Belt (SSYB)</h5><p>DMAIC, Root Cause Analysis, Process Improvement</p></div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon" style="background:color-mix(in srgb,var(--accent2) 12%,transparent);color:var(--accent2)"><i class="fas fa-headset"></i></div>
+        <div><h5>Certified Freshdesk Admin</h5><p>Freshdesk management & customer support optimisation</p></div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon" style="background:color-mix(in srgb,var(--accent3) 12%,transparent);color:var(--accent3)"><i class="fab fa-aws"></i></div>
+        <div><h5>Cloud Computing Training</h5><p>STL Academy · AWS, Linux, Git, Docker, Ansible · 2023</p></div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon" style="background:color-mix(in srgb,#e74c3c 10%,transparent);color:#e74c3c"><i class="fas fa-desktop"></i></div>
+        <div><h5>Diploma in Computer Application</h5><p>Adobe Computer Institute · MS Office Suite · 2016</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resume -->
+<section id="resume">
+  <div class="container">
+    <div class="sec-label">Career Documents</div>
+    <h2 class="sec-title">Download Resume</h2>
+    <div class="resume-box reveal">
+      <div class="dl-card">
+        <div class="dl-icon"><i class="fas fa-file-pdf"></i></div>
+        <h3>Full Resume — PDF</h3>
+        <p>Complete career history, skills, education and certifications in a clean, professional format.</p>
+        <a href="https://github.com/user-attachments/files/22951649/resume.pdf" class="btn btn-primary" download>
+          <i class="fas fa-download"></i> Download PDF
+        </a>
+      </div>
+      <div class="summary-card">
+        <h4>Professional Summary</h4>
+        <ul>
+          <li>Operations Supervisor at Apollo Pharmalogistics — Healthcare Logistics (2026–Present)</li>
+          <li>Associate Lead, Control Tower Operations at Shadowfax Technologies (2024–2026)</li>
+          <li>Drove breach rate from 17% to ~4% on Myntra Now; serviceability to 99%</li>
+          <li>Improved chat handling capacity by 50% at Rider Care Centre</li>
+          <li>Certified Six Sigma Yellow Belt + Freshdesk Admin + Cloud Computing</li>
+          <li>5+ years Chemistry & Mathematics teaching — 100+ students mentored</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section id="blog">
+  <div class="container">
+    <div class="blog-head">
+      <div>
+        <div class="sec-label">Thoughts & Insights</div>
+        <h2 class="sec-title" style="margin-bottom:0">Blog</h2>
+      </div>
+      <button class="btn btn-outline btn-small" onclick="openAdmin()"><i class="fas fa-lock"></i> Admin</button>
+    </div>
+    <div id="postsGrid" class="posts-grid"></div>
+    <div id="emptyBlog" class="empty-blog" style="display:none">
+      <i class="fas fa-pen-nib"></i>
+      <p>No posts yet. Check back soon for insights on operations, logistics & quick commerce.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-label">Let's Connect</div>
+    <h2 class="sec-title">Get In Touch</h2>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-item">
+            <div class="ci" style="background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent)"><i class="fas fa-envelope"></i></div>
+            <div><div class="ct">Email</div><div class="cv">akashkumargupta1998@gmail.com</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci" style="background:color-mix(in srgb,var(--accent3) 10%,transparent);color:var(--accent3)"><i class="fas fa-phone"></i></div>
+            <div><div class="ct">Phone</div><div class="cv">+91 8677908907</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci" style="background:color-mix(in srgb,var(--accent2) 10%,transparent);color:var(--accent2)"><i class="fas fa-map-marker-alt"></i></div>
+            <div><div class="ct">Location</div><div class="cv">Singasandra, Bangalore, India</div></div>
+          </div>
+          <div class="social-row">
+            <a href="https://www.linkedin.com/in/akash-kumar1998" target="_blank" class="soc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@Akash4All" target="_blank" class="soc"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.quora.com/profile/Akash-Kumar-5940" target="_blank" class="soc"><i class="fab fa-quora"></i></a>
+            <a href="https://www.credly.com/users/akash-kumar-gupta.16afd047" target="_blank" class="soc"><i class="fas fa-award"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-grp"><label>Your Name</label><input type="text" id="cName" placeholder="Enter your name"></div>
+        <div class="form-grp"><label>Email Address</label><input type="email" id="cEmail" placeholder="Enter your email"></div>
+        <div class="form-grp"><label>Subject</label><input type="text" id="cSubject" placeholder="What's it about?"></div>
+        <div class="form-grp"><label>Message</label><textarea id="cMsg" rows="5" placeholder="Your message..."></textarea></div>
+        <div class="form-status" id="formStatus"></div>
+        <button class="btn btn-primary" id="sendBtn" onclick="sendContact()"><i class="fas fa-paper-plane"></i> <span id="btnTxt">Send Message</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="fl">Akash<span>.</span></div>
+        <p>Operations leader with a passion for transforming logistics through data-driven decisions and real-time problem solving.</p>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <a href="https://www.linkedin.com/in/akash-kumar1998" target="_blank">LinkedIn</a>
+        <a href="https://www.youtube.com/@Akash4All" target="_blank">YouTube</a>
+        <a href="https://www.quora.com/profile/Akash-Kumar-5940" target="_blank">Quora</a>
+        <a href="https://www.credly.com/users/akash-kumar-gupta.16afd047" target="_blank">Credly</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="yr"></span> Akash Kumar Gupta. All rights reserved.</span>
+      <span>Built with passion from Bangalore 🇮🇳</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Post View Modal -->
+<div class="modal-overlay" id="postModal">
+  <div class="modal">
+    <div class="modal-hd">
+      <h2 id="modalTitle">Post Title</h2>
+      <button class="close-btn" onclick="closeModal('postModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-meta">
+        <span id="modalCat" style="color:var(--accent);font-weight:600"></span>
+        <span>·</span>
+        <span id="modalDate"></span>
+      </div>
+      <div class="modal-content" id="modalContent"></div>
+      <div class="modal-reactions">
+        <button class="react-big" id="likeBtn" onclick="reactPost('like')"><i class="fas fa-heart"></i> <span id="likeCount">0</span> Likes</button>
+        <button class="react-big" id="dislikeBtn" onclick="reactPost('dislike')"><i class="fas fa-thumbs-down"></i> <span id="dislikeCount">0</span> Dislikes</button>
+      </div>
+      <div class="comments-section">
+        <h4 id="commentHeader">Comments (0)</h4>
+        <div class="comment-input-row">
+          <input type="text" id="commenterName" placeholder="Your name">
+          <input type="text" id="commenterText" placeholder="Add a comment..." style="flex:2" onkeydown="if(event.key==='Enter')postComment()">
+          <button class="btn btn-primary btn-small" onclick="postComment()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div class="comment-list" id="commentList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Admin Modal -->
+<div class="modal-overlay" id="adminModal">
+  <div class="modal">
+    <div class="modal-hd">
+      <h2>Blog Admin</h2>
+      <button class="close-btn" onclick="closeModal('adminModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div id="passGate" class="pass-check">
+        <h3>Admin Access</h3>
+        <p>Enter your admin password to manage blog posts.</p>
+        <div class="pass-row">
+          <input type="password" id="passInput" placeholder="Password" onkeydown="if(event.key==='Enter')checkPass()">
+          <button class="btn btn-primary" onclick="checkPass()">Enter</button>
+        </div>
+        <p class="admin-note">Default password: <code>akash2024</code> — change in code</p>
+      </div>
+      <div id="adminPanel" style="display:none">
+        <div style="background:color-mix(in srgb,var(--accent3) 8%,transparent);border:1px solid color-mix(in srgb,var(--accent3) 25%,transparent);border-radius:var(--r);padding:16px 20px;margin-bottom:20px;display:flex;gap:12px;align-items:flex-start">
+          <i class="fas fa-circle-check" style="color:var(--accent3);margin-top:2px;flex-shrink:0"></i>
+          <div><strong style="font-size:0.9rem;color:var(--text)">Blog is managed via Google Sheets</strong><br><small style="color:var(--text2)">All posts, comments, reactions and messages are stored in your connected Google Sheet.</small></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:16px">
+            <div style="font-size:1.2rem;margin-bottom:8px">📝</div>
+            <strong style="font-size:0.88rem;color:var(--text);display:block;margin-bottom:4px">Write a New Post</strong>
+            <small style="color:var(--text3)">Open your Google Sheet → Posts tab → add a new row. Set status to <code>published</code>.</small>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:16px">
+            <div style="font-size:1.2rem;margin-bottom:8px">🖼️</div>
+            <strong style="font-size:0.88rem;color:var(--text);display:block;margin-bottom:4px">Add Image / Chart</strong>
+            <small style="color:var(--text3)">Paste a direct image URL in the <code>imageUrl</code> column. Paste an iframe embed in <code>chartEmbed</code>.</small>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:16px">
+            <div style="font-size:1.2rem;margin-bottom:8px">💬</div>
+            <strong style="font-size:0.88rem;color:var(--text);display:block;margin-bottom:4px">Moderate Comments</strong>
+            <small style="color:var(--text3)">Comments tab → change <code>approved</code> column to <code>no</code> to hide a comment.</small>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:16px">
+            <div style="font-size:1.2rem;margin-bottom:8px">📩</div>
+            <strong style="font-size:0.88rem;color:var(--text);display:block;margin-bottom:4px">View Messages</strong>
+            <small style="color:var(--text3)">Messages tab shows all contact form submissions with name, email, and message.</small>
+          </div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:16px">
+          <strong style="font-size:0.88rem;color:var(--text);display:block;margin-bottom:8px">📋 Posts Sheet Column Reference</strong>
+          <table style="width:100%;border-collapse:collapse;font-size:0.8rem">
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;color:var(--accent);font-weight:600">postId</td><td style="padding:6px 8px;color:var(--text2)">Unique ID e.g. p1001, p1002</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;color:var(--accent);font-weight:600">date</td><td style="padding:6px 8px;color:var(--text2)">YYYY-MM-DD format</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;color:var(--accent);font-weight:600">title</td><td style="padding:6px 8px;color:var(--text2)">Post headline</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;color:var(--accent);font-weight:600">category</td><td style="padding:6px 8px;color:var(--text2)">Operations / Logistics / Quick Commerce etc.</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;color:var(--accent);font-weight:600">excerpt</td><td style="padding:6px 8px;color:var(--text2)">Short teaser shown on card (optional)</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;color:var(--accent);font-weight:600">content</td><td style="padding:6px 8px;color:var(--text2)">Full post body. Use blank lines between paragraphs.</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;color:var(--accent);font-weight:600">imageUrl</td><td style="padding:6px 8px;color:var(--text2)">Direct URL to cover image (optional)</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;color:var(--accent);font-weight:600">chartEmbed</td><td style="padding:6px 8px;color:var(--text2)">Full iframe embed code for chart (optional)</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px;color:var(--accent);font-weight:600">authorNote</td><td style="padding:6px 8px;color:var(--text2)">Italic callout shown below post (optional)</td></tr>
+            <tr><td style="padding:6px 8px;color:var(--accent);font-weight:600">status</td><td style="padding:6px 8px;color:var(--text2)"><code>published</code> to show, anything else hides it</td></tr>
+          </table>
+        </div>
+        <button class="btn btn-primary" onclick="loadPosts();closeModal('adminModal');showToast('Posts refreshed!')"><i class="fas fa-refresh"></i> Refresh Posts on Site</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// ─────────────────────────────────────────────
+// CONFIG — paste your Apps Script Web App URL below after deploying
+// ─────────────────────────────────────────────
+const GAS_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+// ─────────────────────────────────────────────
+// State
+// ─────────────────────────────────────────────
+let posts = [];
+let currentPostId = null;
+let userReactions = JSON.parse(localStorage.getItem('akash_reactions') || '{}');
+
+function saveReactions(){ localStorage.setItem('akash_reactions', JSON.stringify(userReactions)); }
+
+// ─────────────────────────────────────────────
+// GAS API helpers
+// ─────────────────────────────────────────────
+async function gasGet(params){
+  const qs = new URLSearchParams(params).toString();
+  const r = await fetch(GAS_URL + '?' + qs);
+  return r.json();
+}
+async function gasPost(body){
+  const r = await fetch(GAS_URL, {method:'POST', body: JSON.stringify(body)});
+  return r.json();
+}
+
+// ─────────────────────────────────────────────
+// Utils
+// ─────────────────────────────────────────────
+function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function formatDate(d){
+  const dt = new Date(d);
+  if(isNaN(dt)) return d;
+  return dt.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+}
+function getCatIcon(cat){
+  const c=(cat||'').toLowerCase();
+  if(c.includes('logistic')||c.includes('deliver')) return '🚚';
+  if(c.includes('ops')||c.includes('operat')) return '📊';
+  if(c.includes('tech')||c.includes('cloud')) return '☁️';
+  if(c.includes('chem')) return '🧪';
+  if(c.includes('commerce')||c.includes('quick')) return '⚡';
+  if(c.includes('learn')||c.includes('teach')) return '📚';
+  return '✍️';
+}
+
+// ─────────────────────────────────────────────
+// Render posts grid
+// ─────────────────────────────────────────────
+function renderPosts(){
+  const grid = document.getElementById('postsGrid');
+  const empty = document.getElementById('emptyBlog');
+  if(!posts.length){ grid.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
+  grid.innerHTML = posts.map(p=>{
+    const ur = userReactions[p.postId] || null;
+    const imgHtml = p.imageUrl && p.imageUrl.trim()
+      ? '<img src="' + escHtml(p.imageUrl) + '" alt="' + escHtml(p.title) + '" style="width:100%;height:180px;object-fit:cover" onerror="this.parentElement.style.background=\'var(--bg3)\';this.remove()">'
+      : '<div style="height:180px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:var(--bg3)">' + getCatIcon(p.category) + '</div>';
+    return '<div class="post-card" onclick="openPost(\'' + p.postId + '\')">'
+      + '<div class="post-thumb">' + imgHtml + '</div>'
+      + '<div class="post-body">'
+      + '<div class="post-cat">' + escHtml(p.category||'General') + '</div>'
+      + '<div class="post-title">' + escHtml(p.title) + '</div>'
+      + '<div class="post-excerpt">' + escHtml((p.excerpt||p.content||'').slice(0,140)) + ((p.excerpt||p.content||'').length>140?'…':'') + '</div>'
+      + '<div class="post-foot">'
+      + '<div class="post-date">' + formatDate(p.date) + '</div>'
+      + '<div class="post-reactions">'
+      + '<button class="react-btn ' + (ur==='like'?'liked':'') + '" onclick="event.stopPropagation();quickReact(\'' + p.postId + '\',\'like\')"><i class="fas fa-heart"></i> ' + (p.likes||0) + '</button>'
+      + '<button class="react-btn ' + (ur==='dislike'?'disliked':'') + '" onclick="event.stopPropagation();quickReact(\'' + p.postId + '\',\'dislike\')"><i class="fas fa-thumbs-down"></i> ' + (p.dislikes||0) + '</button>'
+      + '<span style="color:var(--text3);font-size:0.76rem"><i class="fas fa-comment"></i> ' + (p.commentCount||0) + '</span>'
+      + '</div></div></div></div>';
+  }).join('');
+}
+
+// ─────────────────────────────────────────────
+// Load posts from Google Sheets
+// ─────────────────────────────────────────────
+async function loadPosts(){
+  if(GAS_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){
+    document.getElementById('emptyBlog').style.display='block';
+    document.getElementById('emptyBlog').innerHTML='<i class="fas fa-plug" style="font-size:2rem;margin-bottom:12px;display:block"></i><p>Connect your Google Sheet to display posts.<br><small style="color:var(--text3)">Set GAS_URL in the script, then reload.</small></p>';
+    return;
+  }
+  try{
+    document.getElementById('postsGrid').innerHTML='<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text3)"><i class="fas fa-spinner fa-spin" style="font-size:1.5rem"></i><br><small style="margin-top:10px;display:block">Loading posts…</small></div>';
+    document.getElementById('emptyBlog').style.display='none';
+    const res = await gasGet({action:'getPosts'});
+    if(res.ok){ posts = res.posts; renderPosts(); }
+    else showToast('Could not load posts.');
+  }catch(e){ showToast('Network error loading posts.'); console.error(e); }
+}
+
+// ─────────────────────────────────────────────
+// Open post modal
+// ─────────────────────────────────────────────
+async function openPost(id){
+  const p = posts.find(x=>x.postId===id);
+  if(!p) return;
+  currentPostId = id;
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalCat').textContent = p.category||'General';
+  document.getElementById('modalDate').textContent = formatDate(p.date);
+
+  let html = '';
+  if(p.imageUrl && p.imageUrl.trim()){
+    html += '<img src="' + escHtml(p.imageUrl) + '" alt="' + escHtml(p.title) + '" style="width:100%;border-radius:var(--r);margin-bottom:20px;max-height:380px;object-fit:cover">';
+  }
+  html += p.content.split('\n\n').map(function(para){ return '<p>' + escHtml(para).replace(/\n/g,'<br>') + '</p>'; }).join('');
+  if(p.chartEmbed && p.chartEmbed.trim()){
+    html += '<div style="margin-top:20px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden">' + p.chartEmbed + '</div>';
+  }
+  if(p.authorNote && p.authorNote.trim()){
+    html += '<div style="margin-top:20px;padding:16px 20px;background:color-mix(in srgb,var(--accent) 6%,transparent);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;font-size:0.88rem;color:var(--text2);font-style:italic">' + escHtml(p.authorNote) + '</div>';
+  }
+  document.getElementById('modalContent').innerHTML = html;
+
+  const ur = userReactions[id];
+  document.getElementById('likeCount').textContent = p.likes||0;
+  document.getElementById('dislikeCount').textContent = p.dislikes||0;
+  document.getElementById('likeBtn').className = 'react-big' + (ur==='like'?' liked':'');
+  document.getElementById('dislikeBtn').className = 'react-big' + (ur==='dislike'?' disliked':'');
+
+  document.getElementById('commentList').innerHTML = '<p style="color:var(--text3);font-size:0.85rem;text-align:center;padding:12px"><i class="fas fa-spinner fa-spin"></i> Loading…</p>';
+  document.getElementById('commentHeader').textContent = 'Comments';
+  document.getElementById('postModal').classList.add('open');
+  document.body.style.overflow='hidden';
+
+  try{
+    if(GAS_URL !== 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){
+      const cr = await gasGet({action:'getComments', postId:id});
+      if(cr.ok) renderComments(cr.comments);
+    } else renderComments([]);
+  }catch(e){ renderComments([]); }
+}
+
+function renderComments(comments){
+  document.getElementById('commentHeader').textContent = 'Comments (' + comments.length + ')';
+  const list = document.getElementById('commentList');
+  if(!comments.length){ list.innerHTML = '<p style="color:var(--text3);font-size:0.85rem">No comments yet. Be the first!</p>'; return; }
+  list.innerHTML = comments.map(function(c){
+    const initials = c.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
+    return '<div class="comment-item">'
+      + '<div class="comment-avatar">' + initials + '</div>'
+      + '<div class="comment-text">'
+      + '<strong>' + escHtml(c.name) + '</strong>'
+      + '<p>' + escHtml(c.comment) + '</p>'
+      + '<div class="comment-date">' + formatDate(c.timestamp) + '</div>'
+      + '</div></div>';
+  }).join('');
+}
+
+// ─────────────────────────────────────────────
+// Post comment
+// ─────────────────────────────────────────────
+async function postComment(){
+  const name = document.getElementById('commenterName').value.trim();
+  const text = document.getElementById('commenterText').value.trim();
+  if(!name||!text){ showToast('Please enter your name and comment.'); return; }
+  if(GAS_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){ showToast('Configure GAS_URL first.'); return; }
+  const btn = document.querySelector('.comment-input-row button');
+  btn.disabled = true;
+  try{
+    const res = await gasPost({action:'comment', postId:currentPostId, name:name, comment:text});
+    if(res.ok){
+      document.getElementById('commenterName').value='';
+      document.getElementById('commenterText').value='';
+      showToast('Comment posted!');
+      const cr = await gasGet({action:'getComments', postId:currentPostId});
+      if(cr.ok) renderComments(cr.comments);
+      const p = posts.find(x=>x.postId===currentPostId);
+      if(p) p.commentCount = (p.commentCount||0) + 1;
+      renderPosts();
+    } else showToast('Error posting comment.');
+  }catch(e){ showToast('Network error.'); }
+  finally{ btn.disabled=false; }
+}
+
+// ─────────────────────────────────────────────
+// Reactions
+// ─────────────────────────────────────────────
+async function reactPost(type){
+  if(GAS_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){ showToast('Configure GAS_URL first.'); return; }
+  const p = posts.find(x=>x.postId===currentPostId); if(!p) return;
+  const prev = userReactions[currentPostId];
+  if(prev===type) return;
+  userReactions[currentPostId] = type;
+  saveReactions();
+  if(type==='like') p.likes = (p.likes||0)+1;
+  else p.dislikes = (p.dislikes||0)+1;
+  document.getElementById('likeCount').textContent = p.likes||0;
+  document.getElementById('dislikeCount').textContent = p.dislikes||0;
+  document.getElementById('likeBtn').className = 'react-big' + (type==='like'?' liked':'');
+  document.getElementById('dislikeBtn').className = 'react-big' + (type==='dislike'?' disliked':'');
+  renderPosts();
+  await gasPost({action:'react', postId:currentPostId, type:type});
+}
+
+async function quickReact(id, type){
+  if(GAS_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){ showToast('Configure GAS_URL first.'); return; }
+  const p = posts.find(x=>x.postId===id); if(!p) return;
+  if(userReactions[id]===type) return;
+  userReactions[id] = type;
+  saveReactions();
+  if(type==='like') p.likes = (p.likes||0)+1;
+  else p.dislikes = (p.dislikes||0)+1;
+  renderPosts();
+  await gasPost({action:'react', postId:id, type:type});
+}
+
+// ─────────────────────────────────────────────
+// Modals
+// ─────────────────────────────────────────────
+function closeModal(id){
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow='';
+  if(id==='adminModal'){
+    document.getElementById('passGate').style.display='block';
+    document.getElementById('adminPanel').style.display='none';
+    document.getElementById('passInput').value='';
+  }
+}
+document.querySelectorAll('.modal-overlay').forEach(function(o){
+  o.addEventListener('click', function(e){ if(e.target===o) closeModal(o.id); });
+});
+
+function openAdmin(){ document.getElementById('adminModal').classList.add('open'); document.body.style.overflow='hidden'; }
+function checkPass(){
+  if(document.getElementById('passInput').value==='akash2024'){
+    document.getElementById('passGate').style.display='none';
+    document.getElementById('adminPanel').style.display='block';
+  } else showToast('Incorrect password.');
+}
+
+// ─────────────────────────────────────────────
+// Contact form → Sheets
+// ─────────────────────────────────────────────
+async function sendContact(){
+  const name = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  const subject = document.getElementById('cSubject').value.trim();
+  const msg = document.getElementById('cMsg').value.trim();
+  const st = document.getElementById('formStatus');
+  if(!name||!email||!msg){ st.textContent='Please fill all required fields.'; st.className='form-status error'; st.style.display='block'; return; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ st.textContent='Enter a valid email address.'; st.className='form-status error'; st.style.display='block'; return; }
+  const btn = document.getElementById('sendBtn');
+  btn.disabled=true; document.getElementById('btnTxt').textContent='Sending…';
+  try{
+    if(GAS_URL !== 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){
+      const res = await gasPost({action:'message', name:name, email:email, subject:subject, message:msg});
+      if(!res.ok) throw new Error('Server error');
+    } else {
+      await new Promise(function(r){setTimeout(r,1200);});
+    }
+    ['cName','cEmail','cSubject','cMsg'].forEach(function(id){ document.getElementById(id).value=''; });
+    st.textContent="Thank you! Your message has been received. I'll get back to you soon.";
+    st.className='form-status success'; st.style.display='block';
+    setTimeout(function(){ st.style.display='none'; }, 6000);
+  }catch(e){
+    st.textContent='Something went wrong. Please email me directly.';
+    st.className='form-status error'; st.style.display='block';
+  }finally{
+    btn.disabled=false; document.getElementById('btnTxt').textContent='Send Message';
+  }
+}
+
+// ─────────────────────────────────────────────
+// Toast
+// ─────────────────────────────────────────────
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3000);
+}
+
+// ─────────────────────────────────────────────
+// Theme
+// ─────────────────────────────────────────────
+function initTheme(){
+  const saved = localStorage.getItem('akash_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', saved);
+  document.getElementById('themeBtn').innerHTML = saved==='dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+}
+document.getElementById('themeBtn').addEventListener('click', function(){
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur==='dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('akash_theme', next);
+  document.getElementById('themeBtn').innerHTML = next==='dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+});
+
+// ─────────────────────────────────────────────
+// Mobile nav
+// ─────────────────────────────────────────────
+function closeMob(){ document.getElementById('mobNav').classList.remove('open'); document.getElementById('hamburger').innerHTML='<i class="fas fa-bars"></i>'; }
+document.getElementById('hamburger').addEventListener('click', function(){
+  const n = document.getElementById('mobNav');
+  n.classList.toggle('open');
+  document.getElementById('hamburger').innerHTML = n.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+});
+
+// ─────────────────────────────────────────────
+// Scroll / Intersection animations
+// ─────────────────────────────────────────────
+document.querySelectorAll('.reveal').forEach(function(el){
+  new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('vis'); }); }, {threshold:0.1}).observe(el);
+});
+document.querySelectorAll('.skill-card').forEach(function(el){
+  new IntersectionObserver(function(entries){ entries.forEach(function(e){
+    if(e.isIntersecting) e.target.querySelectorAll('.sbar-fill').forEach(function(b){ b.style.width=(b.getAttribute('data-w')||0)+'%'; });
+  }); }, {threshold:0.2}).observe(el);
+});
+window.addEventListener('scroll', function(){
+  var cur='';
+  document.querySelectorAll('section').forEach(function(s){ if(scrollY>=s.offsetTop-80) cur=s.id; });
+  document.querySelectorAll('.desk a').forEach(function(l){ l.classList.toggle('active', l.getAttribute('href')==='#'+cur); });
+});
+
+// ─────────────────────────────────────────────
+// Loading screen
+// ─────────────────────────────────────────────
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    var l = document.getElementById('loading');
+    l.classList.add('gone');
+    setTimeout(function(){ if(l) l.remove(); }, 500);
+  }, 1500);
+});
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// ─────────────────────────────────────────────
+// Boot
+// ─────────────────────────────────────────────
+initTheme();
+loadPosts();
+</script>
+</body>
+</html>
