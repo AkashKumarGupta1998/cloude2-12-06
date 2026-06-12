@@ -634,21 +634,289 @@ footer a:hover{opacity:1}
 
 <!-- Blog -->
 <section id="blog">
-  <div class="container">
-    <div class="blog-head">
-      <div>
-        <div class="sec-label">Thoughts & Insights</div>
-        <h2 class="sec-title" style="margin-bottom:0">Blog</h2>
-      </div>
-      <button class="btn btn-outline btn-small" onclick="openAdmin()"><i class="fas fa-lock"></i> Admin</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Blog System</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* Minimal required styling placeholders */
+body { font-family: Arial; margin:0; padding:0; background:#f6f6f6; }
+.container { max-width:1100px; margin:auto; padding:20px; }
+.posts-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
+.post-card { background:#fff; border-radius:12px; overflow:hidden; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+.post-body { padding:12px; }
+.post-title { font-weight:700; margin:6px 0; }
+.post-cat { font-size:12px; color:#666; }
+.post-excerpt { font-size:13px; color:#444; }
+.post-foot { display:flex; justify-content:space-between; font-size:12px; margin-top:10px; }
+button { cursor:pointer; }
+.modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); }
+.modal-overlay.open { display:block; }
+.modal { background:#fff; max-width:700px; margin:40px auto; padding:20px; border-radius:12px; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Blog</h2>
+<div id="postsGrid" class="posts-grid"></div>
+<div id="emptyBlog" style="display:none;">No posts</div>
+
+</div>
+
+<!-- POST MODAL -->
+<div class="modal-overlay" id="postModal">
+  <div class="modal">
+    <h2 id="modalTitle"></h2>
+    <div id="modalMeta"></div>
+    <div id="modalContent"></div>
+
+    <div style="margin-top:15px;">
+      <button onclick="react('like')">❤️ <span id="likeCount">0</span></button>
+      <button onclick="react('dislike')">👎 <span id="dislikeCount">0</span></button>
     </div>
-    <div id="postsGrid" class="posts-grid"></div>
-    <div id="emptyBlog" class="empty-blog" style="display:none">
-      <i class="fas fa-pen-nib"></i>
-      <p>No posts yet. Check back soon for insights on operations, logistics & quick commerce.</p>
-    </div>
+
+    <hr>
+
+    <input id="cName" placeholder="Name"><br><br>
+    <input id="cText" placeholder="Comment"><br><br>
+    <button onclick="addComment()">Post Comment</button>
+
+    <div id="comments"></div>
+
+    <br>
+    <button onclick="closeModal()">Close</button>
   </div>
-</section>
+</div>
+
+<script>
+// ==========================
+// CONFIG
+// ==========================
+const GAS_URL = "https://script.google.com/macros/s/AKfycbwja8kezYJCuB50RWuIM1vWSxfAVqTzKwvPHeZP3FgqOwQggXW3ZNSUr_ZjkOK9y_nQ/exec";
+
+// ==========================
+// STATE
+// ==========================
+const state = {
+  posts: [],
+  current: null,
+  reactions: JSON.parse(localStorage.getItem("reactions") || "{}")
+};
+
+function saveReactions(){
+  localStorage.setItem("reactions", JSON.stringify(state.reactions));
+}
+
+// ==========================
+// API
+// ==========================
+async function getAPI(params){
+  const res = await fetch(GAS_URL + "?" + new URLSearchParams(params));
+  return res.json();
+}
+
+async function postAPI(body){
+  const res = await fetch(GAS_URL,{
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body:JSON.stringify(body)
+  });
+  return res.json();
+}
+
+// ==========================
+// UTILS
+// ==========================
+function esc(s=""){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+function dateFmt(d){
+  return new Date(d).toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"});
+}
+
+function icon(cat=""){
+  cat = cat.toLowerCase();
+  if(cat.includes("log")) return "🚚";
+  if(cat.includes("ops")) return "📊";
+  if(cat.includes("tech")) return "☁️";
+  return "✍️";
+}
+
+// SAFE EMBED (FIXED)
+function safeEmbed(embed){
+  if(!embed) return "";
+  return embed.includes("<iframe") ? `<div>${embed}</div>` : "";
+}
+
+// ==========================
+// LOAD POSTS
+// ==========================
+async function loadPosts(){
+  try{
+    const res = await getAPI({action:"getPosts"});
+    if(res.ok){
+      state.posts = res.posts;
+      render();
+    }
+  }catch(e){
+    console.error(e);
+  }
+}
+
+// ==========================
+// RENDER POSTS
+// ==========================
+function render(){
+  const grid = document.getElementById("postsGrid");
+
+  if(!state.posts.length){
+    document.getElementById("emptyBlog").style.display="block";
+    return;
+  }
+
+  document.getElementById("emptyBlog").style.display="none";
+
+  grid.innerHTML = state.posts.map(p=>`
+    <div class="post-card" onclick="openPost('${p.postId}')">
+      <div style="height:150px;background:#eee;display:flex;align-items:center;justify-content:center;font-size:30px">
+        ${icon(p.category)}
+      </div>
+
+      <div class="post-body">
+        <div class="post-cat">${esc(p.category||"General")}</div>
+        <div class="post-title">${esc(p.title)}</div>
+        <div class="post-excerpt">${esc((p.excerpt||p.content||"").slice(0,120))}</div>
+
+        <div class="post-foot">
+          <span>${dateFmt(p.date)}</span>
+
+          <span>
+            ❤️ ${p.likes||0} 👎 ${p.dislikes||0}
+          </span>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+// ==========================
+// OPEN POST
+// ==========================
+function openPost(id){
+  const p = state.posts.find(x=>x.postId===id);
+  if(!p) return;
+
+  state.current = id;
+
+  document.getElementById("modalTitle").textContent = p.title;
+  document.getElementById("modalMeta").textContent = `${p.category} • ${dateFmt(p.date)}`;
+
+  let html = "";
+
+  if(p.imageUrl){
+    html += `<img src="${esc(p.imageUrl)}" style="width:100%">`;
+  }
+
+  html += p.content.split("\n\n").map(x=>`<p>${esc(x)}</p>`).join("");
+
+  html += safeEmbed(p.chartEmbed);
+
+  document.getElementById("modalContent").innerHTML = html;
+
+  document.getElementById("likeCount").textContent = p.likes||0;
+  document.getElementById("dislikeCount").textContent = p.dislikes||0;
+
+  document.getElementById("postModal").classList.add("open");
+
+  loadComments(id);
+}
+
+// ==========================
+// CLOSE MODAL
+// ==========================
+function closeModal(){
+  document.getElementById("postModal").classList.remove("open");
+}
+
+// ==========================
+// REACTIONS
+// ==========================
+async function react(type){
+  const p = state.posts.find(x=>x.postId===state.current);
+  if(!p) return;
+
+  if(state.reactions[state.current]===type) return;
+
+  state.reactions[state.current]=type;
+  saveReactions();
+
+  if(type==="like") p.likes=(p.likes||0)+1;
+  if(type==="dislike") p.dislikes=(p.dislikes||0)+1;
+
+  document.getElementById("likeCount").textContent=p.likes;
+  document.getElementById("dislikeCount").textContent=p.dislikes;
+
+  render();
+
+  await postAPI({action:"react",postId:state.current,type});
+}
+
+// ==========================
+// COMMENTS
+// ==========================
+async function addComment(){
+  const name = document.getElementById("cName").value.trim();
+  const text = document.getElementById("cText").value.trim();
+
+  if(!name||!text) return;
+
+  await postAPI({
+    action:"comment",
+    postId:state.current,
+    name,
+    comment:text
+  });
+
+  document.getElementById("cName").value="";
+  document.getElementById("cText").value="";
+
+  loadComments(state.current);
+}
+
+async function loadComments(id){
+  const res = await getAPI({action:"getComments",postId:id});
+  const box = document.getElementById("comments");
+
+  if(!res.ok || !res.comments.length){
+    box.innerHTML = "<p>No comments</p>";
+    return;
+  }
+
+  box.innerHTML = res.comments.map(c=>`
+    <div style="border-bottom:1px solid #ddd;padding:6px 0">
+      <b>${esc(c.name)}</b>
+      <p>${esc(c.comment)}</p>
+    </div>
+  `).join("");
+}
+
+// ==========================
+// INIT
+// ==========================
+loadPosts();
+</script>
+
+</body>
+</html>
 
 <!-- Contact -->
 <section id="contact">
